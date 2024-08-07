@@ -47,7 +47,7 @@ console.log(result2);
 let arraysum = [1,2,3,4,56,73,45,2]
 
 const totalSum = (arrsum) => {
-  const sum = arrsum.reduce((partialSum, a) => partialSum + a, 0);
+  const sum = arrsum.reduce((param, a) => param + a, 0);
   return sum
 }
 
@@ -63,6 +63,23 @@ console.log(result3);
 // Solution(['apple', 'banana', 'apple'])
 // Terminal should print "you have 2 apple, 1 banana"
 
+let arrayfruit = ['apple', 'banana', 'apple', 'strawberry', 'dragonfruit', 'dragonfruit']
+
+const fruitbasket = (arrFruit) => {
+  const count = arrFruit.reduce((countMap, fruit) => {
+    countMap[fruit] = (countMap[fruit] || 0) + 1
+    return countMap
+  }, {});
+  for (const [fruit, number] of Object.entries(count)) {
+    console.log(`You have ${number} ${fruit}(s)`);
+  }
+};
+
+result4 = fruitbasket(arrayfruit);
+console.log(result4);
+
+
+// solution inspired from : https://stackoverflow.com/questions/14446511/most-efficient-method-to-groupby-on-an-array-of-objects?page=1&tab=scoredesc#tab-top
 var groupBy = function(value, key) {
   return value.reduce(function(rv, x) {
     (rv[x[key]] = rv[x[key]] || []).push(x);
@@ -72,6 +89,58 @@ var groupBy = function(value, key) {
 
 console.log(groupBy(['apple', 'banana', 'apple'], 'length'));
 
+
 // (3) A bit harder - write a function that sorts an array. Do not use native JavaScript helper methods like array.sort() . Please let us know the time complexity of your solution
 // Example:
 // Solution[2,3,1,5] = [1,2,3,5]
+
+
+let arraySort = [2,3,1,5]
+
+const sortWithoutSort = (arrsort) => {
+  let n = arrsort.length;
+  let swapped;
+  do {
+    swapped = false;
+    for (let i = 0; i < n - 1; i++) {
+      if (arrsort[i] > arrsort[i + 1]) {
+        [arrsort[i], arrsort[i + 1]] = [arrsort[i + 1], arrsort[i]];
+        swapped = true;
+      }
+    }
+    n--;
+  } while (swapped);
+  return arrsort;
+}
+
+result5 = sortWithoutSort(arraySort);
+console.log(result5);
+
+// this is an O(n2)
+
+
+// some sort explanation found in :https://stackoverflow.com/questions/1494713/how-does-javascripts-sort-work
+let arr = [90, 1, 20, 14, 3, 55];
+var sortRes = [];
+var copy = arr.slice();		//create duplicate array
+var inc = 0;	//inc meant increment
+copy.sort((a, b) => {
+	sortRes[inc] = [ a, b, a-b ];
+	inc += 1;
+	return a - b;
+});
+var p = 0;
+for (var i = 0; i < inc; i++) {
+	copy = arr.slice();
+	copy.sort((a, b) => {
+		p += 1;
+		if (p <= i ) {
+			return a - b;
+		}
+		else{
+			return false;
+		}
+	});
+	p = 0;
+	console.log(copy +' \t a: '+ sortRes[i][0] +' \tb: '+ sortRes[i][1] +'\tTotal: '+ sortRes[i][2]);
+}
