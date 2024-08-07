@@ -37,3 +37,41 @@ console.log(result2);
 
 // Solution and more found on the link below
 // https://www.geeksforgeeks.org/how-to-find-if-two-arrays-contain-any-common-item-in-javascript/
+
+
+// Alright just off the top of my head, very simple:
+
+// (1) Write me a function that takes an array of numbers, and returns the total sum of all of elements of the array.  For example
+// Solution([1,2,3]) = 6
+
+let arraysum = [1,2,3,4,56,73,45,2]
+
+const totalSum = (arrsum) => {
+  const sum = arrsum.reduce((partialSum, a) => partialSum + a, 0);
+  return sum
+}
+
+result3 = totalSum(arraysum)
+console.log(result3);
+
+// Although contra-intuitive, the .reduce() method works since it iterates over each element of the array, accumulating the total sum.
+// https://stackoverflow.com/questions/1230233/how-to-find-the-sum-of-an-array-of-numbers
+
+
+// (2) Write me a function that takes an array of fruits (strings) and prints how many of each fruit are in the array.
+// Example:
+// Solution(['apple', 'banana', 'apple'])
+// Terminal should print "you have 2 apple, 1 banana"
+
+var groupBy = function(value, key) {
+  return value.reduce(function(rv, x) {
+    (rv[x[key]] = rv[x[key]] || []).push(x);
+    return rv;
+  }, {});
+};
+
+console.log(groupBy(['apple', 'banana', 'apple'], 'length'));
+
+// (3) A bit harder - write a function that sorts an array. Do not use native JavaScript helper methods like array.sort() . Please let us know the time complexity of your solution
+// Example:
+// Solution[2,3,1,5] = [1,2,3,5]
