@@ -116,7 +116,7 @@ const sortWithoutSort = (arrsort) => {
 result5 = sortWithoutSort(arraySort);
 console.log(result5);
 
-// this is an O(n2)
+// this is an O(n^2)
 
 
 // some sort explanation found in :https://stackoverflow.com/questions/1494713/how-does-javascripts-sort-work
