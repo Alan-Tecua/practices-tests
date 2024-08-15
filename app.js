@@ -58,6 +58,41 @@ console.log(result3);
 // https://stackoverflow.com/questions/1230233/how-to-find-the-sum-of-an-array-of-numbers
 
 
+// (1.2) Same challenge but using the `forEach()` method:
+
+function sum(...args) {
+  var total = 0;
+  args.forEach(arg => {
+    total += arg;
+  });
+  console.log(total);
+}
+
+sum(1, 3);
+// https://stackoverflow.com/questions/52997764/calculate-sum-with-foreach-function
+
+
+class arraySum {
+  constructor() {
+    this.sum = 0
+  }
+  add(array) {
+    array.forEach( function countEntry(entry) {
+      this.sum += entry;
+      ++this.count;
+    }, this)
+  }
+}
+
+const obj = new arraySum()
+obj.add([1,5,6]);
+console.log(obj.sum);
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+
+
+
+
 // (2) Write me a function that takes an array of fruits (strings) and prints how many of each fruit are in the array.
 // Example:
 // Solution(['apple', 'banana', 'apple'])
@@ -78,16 +113,33 @@ const fruitbasket = (arrFruit) => {
 result4 = fruitbasket(arrayfruit);
 console.log(result4);
 
+//  (2.2) Same as (1), do the previous problem (2 - fruits) with (a) for loop (b) forEach().
 
-// solution inspired from : https://stackoverflow.com/questions/14446511/most-efficient-method-to-groupby-on-an-array-of-objects?page=1&tab=scoredesc#tab-top
-var groupBy = function(value, key) {
-  return value.reduce(function(rv, x) {
-    (rv[x[key]] = rv[x[key]] || []).push(x);
-    return rv;
-  }, {});
+let arrayfruit2 = ['apple', 'banana', 'apple', 'apple', 'strawberry', 'dragonfruit', 'dragonfruit', 'strawberry'];
+
+const fruitbasketForEach = (arrFruit) => {
+  const count = {};
+
+  arrFruit.forEach(fruit => {
+    count[fruit] = (count[fruit] || 0) + 1;
+  });
+
+  for (const [fruit, number] of Object.entries(count)) {
+    console.log(`You have ${number} ${fruit}(s)`);
+  }
 };
 
-console.log(groupBy(['apple', 'banana', 'apple'], 'length'));
+fruitbasketForEach(arrayfruit2);
+
+// solution inspired from : https://stackoverflow.com/questions/14446511/most-efficient-method-to-groupby-on-an-array-of-objects?page=1&tab=scoredesc#tab-top
+// var groupBy = function(value, key) {
+//   return value.reduce(function(rv, x) {
+//     (rv[x[key]] = rv[x[key]] || []).push(x);
+//     return rv;
+//   }, {});
+// };
+
+// console.log(groupBy(['apple', 'banana', 'apple'], 'length'));
 
 
 // (3) A bit harder - write a function that sorts an array. Do not use native JavaScript helper methods like array.sort() . Please let us know the time complexity of your solution
@@ -144,3 +196,21 @@ for (var i = 0; i < inc; i++) {
 	p = 0;
 	console.log(copy +' \t a: '+ sortRes[i][0] +' \tb: '+ sortRes[i][1] +'\tTotal: '+ sortRes[i][2]);
 }
+
+
+// (3)  I have an array of letters. Write a program that will check the array and return a count of each individual letter.
+// Example: solution(['a', 'b', 'x', 'a']) = {a:2, b:1, x:1}
+
+let arrayletters = ['a', 'b', 'x', 'a']
+
+const letterCounter = (arrLetter) => {
+  const count = arrLetter.reduce((countMap, letter) => {
+    countMap[letter] = (countMap[letter] || 0) + 1
+    return countMap
+  }, {});
+
+  return count;
+};
+
+result = letterCounter(arrayletters);
+console.log(result);
