@@ -21,5 +21,3 @@ function longestCommonPrefix(strs: string[]): string {
   }
   return str1.substring(0, idx);
 };
-
-console.log(longestCommonPrefix(["dog", 'Doom', 'door']));
