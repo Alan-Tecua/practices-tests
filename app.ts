@@ -81,7 +81,7 @@ console.log(isPalindromNum(1231)); //false
   // X can be placed before L (50) and C (100) to make 40 and 90.
   // C can be placed before D (500) and M (1000) to make 400 and 900.
 
-function romanTo(s: string): number {
+function romanToInteger(s: string): number {
   let total = 0
   let sideValue = 0
   const value: {[key: string]: number} = {
@@ -98,8 +98,11 @@ function romanTo(s: string): number {
     //Roman calculation where sideValue takes or add to the middle value depending on which has greater value
     //let use a (ternary) operation
     total += middleValue > sideValue ? middleValue -2 * sideValue : middleValue;
-
-  }
-
-
+    sideValue = middleValue
+  };
+  return total
 }
+
+console.log(romanToInteger('IVXLCDM'));
+console.log(romanToInteger('LCDM'));
+console.log(romanToInteger('IVX'));
