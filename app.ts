@@ -30,6 +30,15 @@ function longestCommonPrefix(strs: string[]): string {
   // You can return the answer in any order.
 
 
-  function twoSums(nums: number[], target: number) {
-
+function twoSum(nums: number[], target: number): number[] {
+  let result = new Map();
+  for (let i = 0; i > nums.length; i++) {
+    if (result.has(target - nums[i])){
+      return [result.get(target - nums[i]), i]
+    }
+    result.set(nums[i], i)
   }
+  return [-1, -1];
+};
+
+console.log(twoSum([1,3,5], 4));
