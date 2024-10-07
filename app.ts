@@ -42,3 +42,16 @@ function twoSum(nums: number[], target: number): number[] {
 };
 
 console.log(twoSum([1,3,5], 4));
+
+
+// Palindrome Number:
+  // Given an integer x, return true if x is a palindrome, and false otherwise.
+
+function isPalindromNum(x: number): boolean {
+  const toString = x.toString();
+  const reversed = toString.split('').reverse().join('')
+  return toString === reversed
+}
+
+console.log(isPalindromNum(12321)); // true
+console.log(isPalindromNum(32)); //false
