@@ -82,6 +82,18 @@ console.log(isPalindromNum(1231)); //false
   // C can be placed before D (500) and M (1000) to make 400 and 900.
 
 function romanTo(s: string): number {
+  let total = 0
+  let sideValue = 0
+  const value: {[key: string]: number} = {
+      I             1
+      V             5
+      X             10
+      L             50
+      C             100
+      D             500
+      M             1000
+
+  }
 
 
 }
