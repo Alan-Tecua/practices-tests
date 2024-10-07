@@ -85,13 +85,20 @@ function romanTo(s: string): number {
   let total = 0
   let sideValue = 0
   const value: {[key: string]: number} = {
-      'I': 1,
-      'V': 5,
-      'X': 10,
-      'L': 50,
-      'C': 100,
-      'D': 500,
-      'M': 1000,
+    'I': 1,
+    'V': 5,
+    'X': 10,
+    'L': 50,
+    'C': 100,
+    'D': 500,
+    'M': 1000,
+  }
+  for (let i = 0; i < s.length; i++ ) {
+    const middleValue = value[s[i]]
+    //Roman calculation where sideValue takes or add to the middle value depending on which has greater value
+    //let use a (ternary) operation
+    total += middleValue > sideValue ? middleValue -2 * sideValue : middleValue;
+
   }
 
 
