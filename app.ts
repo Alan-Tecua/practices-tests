@@ -32,7 +32,7 @@ function longestCommonPrefix(strs: string[]): string {
 
 function twoSum(nums: number[], target: number): number[] {
   let result = new Map();
-  for (let i = 0; i > nums.length; i++) {
+  for (let i = 0; i < nums.length; i++) {
     if (result.has(target - nums[i])){
       return [result.get(target - nums[i]), i]
     }
