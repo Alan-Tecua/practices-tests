@@ -149,3 +149,13 @@ function longestPrefix(words:string[]): string {
 console.log(longestPrefix(['pero', 'perrro', 'perbola'])); //per
 console.log(longestPrefix(['conker', 'coqueto', 'cosa'])); //co
 console.log(longestPrefix(['panfilo', 'Hecatonquiros'])); //""
+
+
+// Valid parenthesis
+  // Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+  // An input string is valid if:
+
+  // Open brackets must be closed by the same type of brackets.
+  // Open brackets must be closed in the correct order.
+  // Every close bracket has a corresponding open bracket of the same type.
