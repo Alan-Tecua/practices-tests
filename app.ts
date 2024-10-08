@@ -106,3 +106,9 @@ function romanToInteger(s: string): number {
 console.log(romanToInteger('IVXLCDM'));
 console.log(romanToInteger('LCDM'));
 console.log(romanToInteger('IVX'));
+
+
+// Longest Common Prefix
+  // Write a function to find the longest common prefix string amongst an array of strings.
+
+  // If there is no common prefix, return an empty string "".
