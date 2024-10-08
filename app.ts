@@ -145,3 +145,7 @@ function longestPrefix(words:string[]): string {
 
   return firstWord.substring(0, index);
 }
+
+console.log(longestPrefix(['pero', 'perrro', 'perbola'])); //per
+console.log(longestPrefix(['conker', 'coqueto', 'cosa'])); //co
+console.log(longestPrefix(['panfilo', 'petronilo'])); //""
