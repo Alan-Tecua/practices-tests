@@ -124,6 +124,24 @@ console.log(romanToInteger('IVX'));
   // Explanation: There is no common prefix among the input strings.
 
 
-function longestPrefix(params:type) {
+function longestPrefix(words:string[]): string {
 
+  //let begin by first sorting the words, so that the common prefix is alway at the star of the str.
+  words.sort();
+
+  //after sorting we can need to fileter out botht the first and last common character (console log them to see if your sorting is working)
+  const firstWord = words[0];
+  const lastWord = words[words.length - 1];
+  //then we can initialize the index at the start of the str
+  let index = 0;
+  // loop count and break as soon as the lastWord is different from the nex word. That will go through each word a pull just the commmon letter on the words, store it and matehc to the next word and thus get ur common prefix result
+  while (index < firstWord.length && index < lastWord.length) {
+    if (firstWord.charAt(index) == lastWord.charAt(index)) {
+      index++;
+    } else {
+      break
+    }
+  };
+
+  return firstWord.substring(0, index);
 }
