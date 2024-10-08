@@ -148,4 +148,4 @@ function longestPrefix(words:string[]): string {
 
 console.log(longestPrefix(['pero', 'perrro', 'perbola'])); //per
 console.log(longestPrefix(['conker', 'coqueto', 'cosa'])); //co
-console.log(longestPrefix(['panfilo', 'petronilo'])); //""
+console.log(longestPrefix(['panfilo', 'Hecatonquiros'])); //""
