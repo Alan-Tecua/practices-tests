@@ -167,4 +167,14 @@ console.log(longestPrefix(['panfilo', 'Hecatonquiros'])); //""
     //since its only 6 character that cancelt themselves once it counter part appears, the satck solution is the default, an, once any of the order does not match, you can stop the loop making the comaprison
     //about the loop, you only need to return true or false , so by making the stack retunr when == 0 , then true else if stack has at least 1 char lft, that an automatic false.
 
+    //firs we need to map our chars htat we will use for the comparison.
+    //then we initialize the array that will hold the stack
+
+
+    //we can start the loop now, by comparing the chars on our map, add it to the stack, and then remove them once they met their pair on the proper order, use push() and pop()
+
+
+
+
+
   }
