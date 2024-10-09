@@ -161,20 +161,27 @@ console.log(longestPrefix(['panfilo', 'Hecatonquiros'])); //""
   // Every close bracket has a corresponding open bracket of the same type.
 
 
-  function isValid(s:string): boolean {
-    //this is what is know an 'stack' challenge, imagine you have a box when you store one of the parenthesis, then add another on top of it the symbol is different.
-    //like yo (, then [, and finally {, at the same time, if the next symbol is: 1. the opposite 2. following the order, then you remove the symbol from the stack: '}])'
-    //since its only 6 character that cancelt themselves once it counter part appears, the satck solution is the default, an, once any of the order does not match, you can stop the loop making the comaprison
-    //about the loop, you only need to return true or false , so by making the stack retunr when == 0 , then true else if stack has at least 1 char lft, that an automatic false.
+function isValid(s: string): boolean {
+  //this is what is know an 'stack' challenge, imagine you have a box when you store one of the parenthesis, then add another on top of it the symbol is different.
+  //like yo (, then [, and finally {, at the same time, if the next symbol is: 1. the opposite 2. following the order, then you remove the symbol from the stack: '}])'
+  //since its only 6 character that cancelt themselves once it counter part appears, the satck solution is the default, an, once any of the order does not match, you can stop the loop making the comaprison
+  //about the loop, you only need to return true or false , so by making the stack retunr when == 0 , then true else if stack has at least 1 char lft, that an automatic false.
 
-    //firs we need to map our chars htat we will use for the comparison.
-    //then we initialize the array that will hold the stack
-
-
-    //we can start the loop now, by comparing the chars on our map, add it to the stack, and then remove them once they met their pair on the proper order, use push() and pop()
-
-
-
-
-
+  //firs we need to map our chars htat we will use for the comparison.
+  //then we initialize the array that will hold the stack
+  const map = {')':'(', ']':'[', '}':'{'};
+  const stack = [];
+  //we can start the loop now, by comparing the chars on our map, add it to the stack, and then remove them once they met their pair on the proper order, use push() and pop()
+  for (const char of s) {
+    if (!(char in map)) {
+      stack.push(char)
+    } else {
+      if (stack.length === 0 || stack.pop() !== map[char]) {
+        return false
+      }
+    }
   }
+  return stack.length === 0;
+}
+
+console.log(isValid("()"));
