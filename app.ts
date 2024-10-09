@@ -161,6 +161,10 @@ console.log(longestPrefix(['panfilo', 'Hecatonquiros'])); //""
   // Every close bracket has a corresponding open bracket of the same type.
 
 
-  function isValid(params:type) {
+  function isValid(s:string): boolean {
+    //this is what is know an 'stack' challenge, imagine you have a box when you store one of the parenthesis, then add another on top of it the symbol is different.
+    //like yo (, then [, and finally {, at the same time, if the next symbol is: 1. the opposite 2. following the order, then you remove the symbol from the stack: '}])'
+    //since its only 6 character that cancelt themselves once it counter part appears, the satck solution is the default, an, once any of the order does not match, you can stop the loop making the comaprison
+    //about the loop, you only need to return true or false , so by making the stack retunr when == 0 , then true else if stack has at least 1 char lft, that an automatic false.
 
   }
