@@ -169,7 +169,7 @@ function isValid(s: string): boolean {
 
   //firs we need to map our chars htat we will use for the comparison.
   //then we initialize the array that will hold the stack
-  const map = {')':'(', ']':'[', '}':'{'};
+  const map: Record<string, string> = {')':'(', ']':'[', '}':'{'};
   const stack = [];
   //we can start the loop now, by comparing the chars on our map, add it to the stack, and then remove them once they met their pair on the proper order, use push() and pop()
   for (const char of s) {
@@ -184,4 +184,5 @@ function isValid(s: string): boolean {
   return stack.length === 0;
 }
 
-console.log(isValid("()"));
+
+console.log(isValid('()'));
