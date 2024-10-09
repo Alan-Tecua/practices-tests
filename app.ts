@@ -185,4 +185,6 @@ function isValid(s: string): boolean {
 }
 
 
-console.log(isValid('()'));
+console.log(isValid('()[}')); //false
+console.log(isValid('()[]{}')); //true
+console.log(isValid('({[]})')); //true
