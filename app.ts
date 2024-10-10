@@ -221,10 +221,13 @@ function mergeList(list1: ListNode | null, list2: ListNode | null ): ListNode | 
       tail.next = list2;
       list2 = list2.next;
     }
+    //tail = tail.next moves the tail pointer to the next node in the new list to continue building it.
     tail = tail.next
   }
+
+  // attach remaining nodes
   tail.next = list1 != null ? list1 : list2
-  // once the loop is finished, we retunr the final list, using .next to remove the 0 value of the dummy node.
+  // we return the final list.
   return newList.next;
 }
 
