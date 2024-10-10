@@ -195,11 +195,21 @@ console.log(isValid('({[]})')); //true
   // Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists.
   // Return the head of the merged linked list.
 
+
+class ListNode {
+    val: number
+    next: ListNode | null
+    constructor(val?: number, next?: ListNode | null) {
+        this.val = (val===undefined ? 0 : val)
+        this.next = (next===undefined ? null : next)
+    }
+}
+
 function mergeList(list1: ListNode | null, list2: ListNode | null ): ListNode | null {
 
   // many solution include the creation of a "dummy node" which pretty much is a new list with a 0 attached to it, making it look like there is a third list ready to be poplated
   // once we have this new dummy node ready, we make a new varible that will help with the merging, some called it the tail = hat *(since you add it from the top to bottom)
-  let newList = new NodeList[0];
+  let newList = new ListNode(0);
   let tail = newList
   // we can start a while loop, this while loop will arrange the elemente accordingly from its lowest to greater value from both lost inside the new list, for wxxample if list1 has 1,3,4,/ and lost2 has 2,4,5,
   //then the new list will add the values on the correct order from both lists: 1,2,3,4,4,5. hence why the while loop
@@ -208,12 +218,17 @@ function mergeList(list1: ListNode | null, list2: ListNode | null ): ListNode | 
       tail.next = list1;
       list1 = list1.next
     } else {
-      tail.val < list2;
+      tail.next = list2;
       list2 = list2.next;
     }
-    tail.tail.next
+    tail.next
   }
   tail.next = list1 != null ? list1 : list2
   // once the loop is finished, we retunr the final list , using .next to remove the 0 value of the dummy node.
   return newList.next;
 }
+
+let listx = new ListNode(1, new ListNode(2, new ListNode(4)));  // Represents [1, 2, 4]
+let listy = new ListNode(1, new ListNode(3, new ListNode(4)));  // Represents [1, 3, 4]
+
+console.log(mergeList(listx, listy));
