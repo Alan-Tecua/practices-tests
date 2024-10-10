@@ -211,9 +211,9 @@ function mergeList(list1: ListNode | null, list2: ListNode | null ): ListNode | 
   // once we have this new dummy node ready, we make a new varible that will help with the merging, some called it the tail = hat *(since you add it from the top to bottom)
   let newList = new ListNode(0);
   let tail = newList
-  // we can start a while loop, this while loop will arrange the elemente accordingly from its lowest to greater value from both lost inside the new list, for wxxample if list1 has 1,3,4,/ and lost2 has 2,4,5,
-  //then the new list will add the values on the correct order from both lists: 1,2,3,4,4,5. hence why the while loop
+  // we can start a while loop, this loop will compare values and add the lower node, for wxxample if list1 has 1,3,4,/ and list2 has 2,4,5,
   while (list1 != null && list2 != null) {
+    //then the new list will add the values on the correct order from both lists: 1,2,3,4,4,5. hence why the while loop
     if(list1.val < list2.val) {
       tail.next = list1;
       list1 = list1.next
@@ -221,14 +221,14 @@ function mergeList(list1: ListNode | null, list2: ListNode | null ): ListNode | 
       tail.next = list2;
       list2 = list2.next;
     }
-    tail.next
+    tail = tail.next
   }
   tail.next = list1 != null ? list1 : list2
-  // once the loop is finished, we retunr the final list , using .next to remove the 0 value of the dummy node.
+  // once the loop is finished, we retunr the final list, using .next to remove the 0 value of the dummy node.
   return newList.next;
 }
 
 let listx = new ListNode(1, new ListNode(2, new ListNode(4)));  // Represents [1, 2, 4]
-let listy = new ListNode(1, new ListNode(3, new ListNode(4)));  // Represents [1, 3, 4]
+let listy = new ListNode(2, new ListNode(3, new ListNode(5)));  // Represents [1, 3, 4]
 
 console.log(mergeList(listx, listy));
