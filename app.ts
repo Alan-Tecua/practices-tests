@@ -263,9 +263,16 @@ console.log(mergeList(listx, listy));
   // }
   // If all assertions pass, then your solution will be accepted.
 
-  function removeElement(nums: number[], val: number ): number {
+function removeElement(nums: number[], val: number ): number {
 
-    let k = nums.length
+  // first, we initialize our array with a let i =0, as well as the length of the array
+
+  let k = nums.length;
+  let i = 0;
+
+  // then we create a loop to iteriate in all the values inside the array, so we can check them with the val so it can be switched positions
+  // after we switched we can reduce the length of the array to remove the matching val, finally we will return the new length of the array under the new `k`
 
 
-  }
+
+}
