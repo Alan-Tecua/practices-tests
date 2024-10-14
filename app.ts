@@ -263,6 +263,9 @@ console.log(mergeList(listx, listy));
   // }
   // If all assertions pass, then your solution will be accepted.
 
-  function removeElement(params:type) {
+  function removeElement(nums: number[], val: number ): number {
+
+    let k = nums.length
+
 
   }
