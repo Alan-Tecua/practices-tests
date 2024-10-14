@@ -273,6 +273,16 @@ function removeElement(nums: number[], val: number ): number {
   // then we create a loop to iteriate in all the values inside the array, so we can check them with the val so it can be switched positions
   // after we switched we can reduce the length of the array to remove the matching val, finally we will return the new length of the array under the new `k`
 
-
-
+  while (i < k) {
+    if (nums[i] === val) {
+      nums[i] = nums[k - 1];
+      k--;
+    } else {
+      i++
+    }
+  }
+  return k
 }
+
+console.log(removeElement([1,2,3,4,5,6], 3)); //5
+console.log(removeElement([1,5,3,4,4], 4)); //3
