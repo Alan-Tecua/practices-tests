@@ -305,3 +305,10 @@ console.log(removeElement([1,5,1,1], 1)); //1
 
 // Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
 // Output: [8,9,9,9,0,0,0,1]
+
+
+function addTwoNums(l1: ListNode | null, l2: ListNode | null ): ListNode | null {
+  let ans = new ListNode(0)
+  return ans
+
+}
