@@ -286,3 +286,4 @@ function removeElement(nums: number[], val: number ): number {
 
 console.log(removeElement([1,2,3,4,5,6], 3)); //5
 console.log(removeElement([1,5,3,4,4], 4)); //3
+console.log(removeElement([1,5,1,1], 1)); //1
