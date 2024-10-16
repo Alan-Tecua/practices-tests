@@ -309,11 +309,18 @@ console.log(removeElement([1,5,1,1], 1)); //1
 
 function addTwoNums(l1: ListNode | null, l2: ListNode | null ): ListNode | null {
 
-  // intialize new list
-  let ans = new ListNode(0)
+  // intialize dummy new list or non-empty linked list
+  let newl = new ListNode(0)
   // from the values inside the list, 1: reverse the order, then `merge` to get the new value.
   // do the same with l2
   // afterwards, split the values again and retunr the new list
-  return ans
+  let ans = new ListNode(0),
+    p1 = l1,
+    p2 = l2,
+    num1 = 0,
+    num2 = 0,
+    carry = 0,
+    current = ans;
+  return newl.next
 
 }
