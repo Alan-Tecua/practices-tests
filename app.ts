@@ -306,11 +306,9 @@ console.log(removeElement([1,5,1,1], 1)); //1
 // Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
 // Output: [8,9,9,9,0,0,0,1]
 
-
 function addTwoNums(l1: ListNode | null, l2: ListNode | null ): ListNode | null {
 
   // intialize dummy new list or non-empty linked list
-  let newl = new ListNode(0)
   // from the values inside the list, 1: reverse the order, then `merge` to get the new value.
   // do the same with l2
   // afterwards, split the values again and retunr the new list
@@ -339,3 +337,24 @@ function addTwoNums(l1: ListNode | null, l2: ListNode | null ): ListNode | null 
   if(carry) current.next = new ListNode(carry);
   return ans.next;
 }
+
+
+// it non empty list
+// two non negateive integers
+// digits are stored in reverse order
+// itirate trough the link list, if its a number above the 9 wthen we need to carry it for the next value,
+//point 1 = list1 (point to the first or in this case the head list)
+// point 2 the bottom
+//num1-2 and carry (if the value is more than 9 on the sum)
+// ans, the list we will return of course.
+// current = ans -> pointer to the solution
+
+//while loop, p1 or p2 is truthy, if it exist, lets continue on this loop
+//num1 = istruthy(not empty or null) ? p1.val(to be returned or back to 0) : 0; repeat for p1
+
+//fun part, check the conditions (if): if(num1+num2+carry > 9) -> do something -> else do this
+// if its greater than nine, then we carry the number, if not, we reset the carry  to 0
+// if(p1) isTruthy? assing that value to the p1: if(p1) p1 = p1.next; if(p2) p2 = p2.next
+//current.next = new ListNode(num1+num2+carry - 10);
+//current = current.next
+//
