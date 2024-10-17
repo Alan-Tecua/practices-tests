@@ -31,6 +31,8 @@ function longestCommonPrefix(strs: string[]): string {
 
 
 function twoSum(nums: number[], target: number): number[] {
+  // to make it an O(n) we can store the number on a has map, the value would be the index and the key will be number,
+  //then we can return the value once the iteration is done
   let result = new Map();
   for (let i = 0; i < nums.length; i++) {
     if (result.has(target - nums[i])){
@@ -41,7 +43,8 @@ function twoSum(nums: number[], target: number): number[] {
   return [-1, -1];
 };
 
-console.log(twoSum([1,3,5], 4));
+console.log(twoSum([1,3,5], 4)); //[0,1]
+console.log(twoSum([1,3,5], 6)); //[0,2]
 
 
 // Palindrome Number:
@@ -357,4 +360,5 @@ function addTwoNums(l1: ListNode | null, l2: ListNode | null ): ListNode | null 
 // if(p1) isTruthy? assing that value to the p1: if(p1) p1 = p1.next; if(p2) p2 = p2.next
 //current.next = new ListNode(num1+num2+carry - 10);
 //current = current.next
-//
+// there is also one edge case, if(carry) still exists, then we need to pass it on a new list = new ListNode(carry);
+//return the ans.next
