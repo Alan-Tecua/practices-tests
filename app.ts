@@ -388,3 +388,21 @@ function addTwoNums(l1: ListNode | null, l2: ListNode | null ): ListNode | null 
 
 // 1 <= haystack.length, needle.length <= 104
 // haystack and needle consist of only lowercase English characters.
+
+function strStr(haystack: string, needle: string): number {
+  // the brute force solution
+  let pointer = 0
+    for(let i = 0; i < haystack.length; i++) {
+      if (haystack[i] != needle[pointer]) {
+        i = i - pointer;
+        pointer = 0;
+      } else if (pointer == needle.length -1){
+        return i - pointer;
+      }
+      else pointer++
+    };
+  return -1
+};
+
+console.log(strStr("iphjrkipo", "ipo" )); // 6
+console.log(strStr("string", "str")); // 0
