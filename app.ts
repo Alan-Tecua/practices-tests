@@ -408,6 +408,8 @@ console.log(strStr("iphjrkipo", "ipo" )); // 6
 console.log(strStr("string", "str")); // 0
 
 
+// 121. Best Time to Buy and Sell Stock
+
 // You are given an array prices where prices[i] is the price of a given stock on the ith day.
 
 // You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
@@ -427,3 +429,20 @@ console.log(strStr("string", "str")); // 0
 // Input: prices = [7,6,4,3,1]
 // Output: 0
 // Explanation: In this case, no transactions are done and the max profit = 0.
+
+
+
+//write the maximun profit by wirting in one transaction
+// buy a stick in 7 and seell on 6 i get a -1, so thats a no no
+// we have to buy before sell and the mx profit can be 0
+// t2 thinks tp keep track, the best profit and the buy price
+// the buy prce we can go throu an Array
+
+function maxProfit(prices:number[]): number {
+  let ans = 0,
+      buy = Infinity;
+  for (i = 0; i < prices.length; i++) {
+    if
+  }
+
+}
