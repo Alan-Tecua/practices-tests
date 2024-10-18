@@ -453,7 +453,7 @@ console.log(maxProfit([7,1,5,3,6,4])); //5
 
 
 
-// Search Insert position, algorithm
+// Searh Insert position, algorithm without constraint
 
 function searchInsert(nums: number[], target: number): number {
   let left = 0,
@@ -471,3 +471,26 @@ function searchInsert(nums: number[], target: number): number {
   return left
 
 };
+
+
+// Search onsert with constraints
+
+
+// function searchInsert2(nums: number[], target: number): number {
+//   let left = 0,
+//       right = nums.length - 1;
+//   for(let i = 0; i < nums.length; i++) {
+//       while (left <= right) {
+//           let i = Math.floor((left + right) / 2),
+//               mid = i;
+//           if ( nums[mid] === target) {
+//               return mid
+//           } else if (nums[mid] < target) {
+//               left = mid + 1
+//           } else {
+//               right = mid - 1
+//           }
+//       }
+//   return left
+//   }
+// };
