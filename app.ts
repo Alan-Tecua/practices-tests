@@ -441,8 +441,33 @@ console.log(strStr("string", "str")); // 0
 function maxProfit(prices:number[]): number {
   let ans = 0,
       buy = Infinity;
-  for (i = 0; i < prices.length; i++) {
-    if
+  for ( let i = 0; i < prices.length; i++) {
+    ans = Math.max(ans, prices[i] - buy);
+    buy = Math.min(buy, prices[i])
   }
-
+  return ans
 }
+
+console.log(maxProfit([1,9])); //8
+console.log(maxProfit([7,1,5,3,6,4])); //5
+
+
+
+// Search Insert position, algorithm
+
+function searchInsert(nums: number[], target: number): number {
+  let left = 0,
+      right = nums.length - 1;
+  while (left <= right) {
+      let mid = Math.floor((left + right) / 2)
+      if ( nums[mid] === target) {
+          return mid
+      } else if (nums[mid] < target) {
+          left = mid + 1
+      } else {
+          right = mid-1
+      }
+  }
+  return left
+
+};
