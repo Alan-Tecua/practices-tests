@@ -520,3 +520,11 @@ function searchInsert(nums: number[], target: number): number {
 // Input: s = "luffy is still joyboy"
 // Output: 6
 // Explanation: The last word is "joyboy" with length 6.
+
+function lengthOfLastWord(s: string): number {
+  let ans = 0;
+  for (let i = 0; i<s.length; i++) {
+
+  }
+
+};
