@@ -522,9 +522,22 @@ function searchInsert(nums: number[], target: number): number {
 // Explanation: The last word is "joyboy" with length 6.
 
 function lengthOfLastWord(s: string): number {
-  let ans = 0;
+
   for (let i = 0; i<s.length; i++) {
 
   }
 
 };
+
+// create a varaible that start the count from the last part of the s
+// from here we creaet 2 loops with conditions
+//one condition will cound when a letter beigns and another when is not an empty space
+
+//last word variable
+//loop backwards the string
+// condition if : current char is no a space
+//       loop backward for current char
+//          condition if current char is not a space
+//            increment last word count
+//       else: return last word count
+//       return last word count
