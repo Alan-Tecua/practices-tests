@@ -522,11 +522,19 @@ function searchInsert(nums: number[], target: number): number {
 // Explanation: The last word is "joyboy" with length 6.
 
 function lengthOfLastWord(s: string): number {
-
-  for (let i = 0; i<s.length; i++) {
-
+  let reversedWordCount = 0;
+  for (let i = s.length -1; i >= 0; i--) {
+    if (s[i] !== ' ' ) {
+      for ( let counter = i; counter >= 0; counter--){
+        if (s[counter] !== ' ') {
+          reversedWordCount++;
+        } else {
+          return reversedWordCount;
+        }
+      }
+      return reversedWordCount;
+    }
   }
-
 };
 
 // create a varaible that start the count from the last part of the s
