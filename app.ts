@@ -593,6 +593,9 @@ function plusOne(digits: number[]): number[] {
   return digits
 };
 
+console.log(plusOne([1,2,3]));//4
+
+
 //lets see first the back of the array, similar to the length of last word challenge
 //conditions: if its a [9] we have to return [1,0]
 //
