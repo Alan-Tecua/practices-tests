@@ -579,3 +579,9 @@ function lengthOfLastWord(s: string): number {
 // Explanation: The array represents the integer 9.
 // Incrementing by one gives 9 + 1 = 10.
 // Thus, the result should be [1,0].
+
+function plusOne(digits: number[]): number[] {
+  let res = [1,0]
+  return res
+
+};
