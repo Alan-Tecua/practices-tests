@@ -581,7 +581,18 @@ function lengthOfLastWord(s: string): number {
 // Thus, the result should be [1,0].
 
 function plusOne(digits: number[]): number[] {
-  let res = [1,0]
-  return res
-
+  for(let i = digits.length - 1; i >= 0; i--) {
+    if(digits[i] === 9) {
+      digits[i] = 0
+    } else {
+      digits[i]++
+      return digits;
+    }
+  }
+  digits.unshift(1)
+  return digits
 };
+
+//lets see first the back of the array, similar to the length of last word challenge
+//conditions: if its a [9] we have to return [1,0]
+//
